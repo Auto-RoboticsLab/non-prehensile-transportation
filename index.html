@@ -176,7 +176,7 @@
               style="border-radius: 10px; box-shadow: 0 4px 8px rgba(0,0,0,0.1);">
           <div class="content has-text-justified">
             <p>
-              Diagram of the proposed replanning framework, including path planning, trajectory parameterization, and a two-stage trajectory refinement.
+              Diagram of the proposed replanning framework, including path planning, trajectory parameterization, and two-stage trajectory refinement.
             </p>
           </div>
         </div>
@@ -309,7 +309,7 @@
       <div class="container mt-6">
         <h3 class="title is-3 has-text-centered mb-4">Robustness Test</h3>
         <p class="content has-text-centered mb-5">
-          We evaluate the robustness of our method against CoM deviation under varying levels of motion aggressiveness.
+          We evaluate the robustness of our method against CoM displacement under varying levels of motion aggressiveness.
         </p>
 
         <div class="columns is-centered">
@@ -318,7 +318,7 @@
               <img src="static/images/Fig22.jpg" alt="Overview of the robustness test setup">
             </figure>
             <p>
-              Robustness experimental results. (a-c) Apparent contact‑force angle deviation vs. CoM displacement for Low/Medium/High aggressiveness; (d) Experimental setup: applied CoM deviation directions (x, y); (e)Success rate vs. CoM displacement for Low/Medium/High aggressiveness.
+              Robustness test results. (a-c) Apparent contact‑force angle deviation vs. CoM displacement for low, medium, and high aggressiveness; (d) Experimental setup: applied CoM displacement directions (x, y); (e) Success rate vs. CoM displacement for low, medium, and high aggressiveness.
             </p>
           </div>
         </div>
@@ -394,7 +394,7 @@
 
         <!-- Optional Description -->
         <p class="content has-text-centered mb-5">
-          Finally, a series of real-world experiments validates the proposed method. Notably, the stable contact constraints derived from the simulated cuboid (5 × 5 × 20 cm) were applied directly to all real-world trials without modification. Therefore, the following experiment can also be considered a test of robustness to parametric uncertainty.
+          Finally, real-world experiments validate the proposed method. Notably, the stable-contact constraints derived from the simulated cuboid (5 × 5 × 20 cm) are applied directly to all real-world trials without modification. Therefore, the following experiment can also be considered a test of robustness to parametric uncertainty.
         </p>
 
         <!-- Row 1: Two videos side-by-side -->
@@ -411,7 +411,7 @@
             <figure class="image is-16by9">
               <iframe class="has-ratio" src="https://www.youtube.com/embed/BLLYwSB57CM" title="YouTube video player" frameborder="0" allowfullscreen></iframe>
             </figure>
-            <p class="has-text-centered has-text-weight-semibold mt-2">Transport milk boxes</p>
+            <p class="has-text-centered has-text-weight-semibold mt-2">Transport milk cartons</p>
           </div>
         </div>
 
@@ -421,7 +421,7 @@
             <figure class="image is-16by9">
               <iframe class="has-ratio" src="https://www.youtube.com/embed/1YTJ_M5j0NE" title="YouTube video player" frameborder="0" allowfullscreen></iframe>
             </figure>
-            <p class="has-text-centered has-text-weight-semibold mt-2">Transport partially filled water</p>
+            <p class="has-text-centered has-text-weight-semibold mt-2">Transport a partially filled cup of water</p>
           </div>
         </div>
         
@@ -502,7 +502,7 @@
           <h2 class="title is-3">Conclusion</h2>
           <div class="content has-text-justified">
             <p>
-              This letter introduces a holistic trajectory-replanning framework that enables safe, flexible, and efficient non-prehensile transportation. Extensive experiments demonstrate the effectiveness and robustness of the proposed method. Despite its effectiveness, our method has limitations. First, the model neglects angular acceleration, which can result in stability constraint violations during aggressive motion. This risk is exacerbated by parametric uncertainties, such as an unmodeled CoM position, which can cause trajectories deemed safe by the planner to fail in practice. Additionally, the current approach is incompatible with moving obstacles for two reasons: (1) the front-end path planner searches in configuration space, and cannot incorporate the spatio-temporal motion information of moving obstacles; and (2) there is no unified representation for dynamic (time‑varying) maps. Furthermore, the robotic arm's full autonomy is limited by its reliance on the motion-capture system. Future work will focus on creating a parameter-robust planner and a fully autonomous system to address these issues.
+              This letter introduces a holistic trajectory-replanning framework that enables safe, flexible, and efficient non-prehensile transportation. Extensive experiments demonstrate the effectiveness and robustness of the proposed method. Despite its effectiveness, our method has limitations. First, the model neglects angular acceleration, which can result in stability constraint violations during aggressive motion. This risk is exacerbated by parametric uncertainties, such as an unmodeled CoM position, which can cause the trajectories that the planner deems safe to fail in practice. Additionally, the current approach cannot handle moving obstacles for two reasons: (1) the front-end path planner searches in configuration space, and cannot incorporate the spatio-temporal motion information of moving obstacles; and (2) there is no unified representation for dynamic (time‑varying) maps. Furthermore, the robotic arm's full autonomy is limited by its reliance on the motion-capture system. Future work will focus on developing a parameter-robust planner and a fully autonomous system to address these issues.
             </p>
           </div>
         </div>
