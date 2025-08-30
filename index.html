@@ -157,7 +157,7 @@
           <h2 class="title is-3">Abstract</h2>
           <div class="content has-text-justified">
             <p>
-              Robotic non-prehensile transportation in complex environments shows significant promise for the service industry. These tasks require robotic arms to be reactive, safe, and flexible enough to navigate dynamic and complex environments while maintaining stable transportation. However, existing limited-horizon motion control methods are often ineffective at navigating in such environments. This letter introduces a framework for efficiently replanning the trajectory of robotic arms to safely and flexibly transport objects. First, a sampling-based path planner with pose constraints is designed to generate a high-quality initial trajectory that is parameterized by piecewise polynomials. Next, an optimizer refines the trajectory to improve feasibility while striving to minimize control effort and time. Notably, the original dynamics-based optimization problem is decomposed into two simpler, kinematics-based subproblems to simplify and speed up computation. Additionally, a collision detector continuously monitors the current trajectory to determine whether to replan or perform a safety stop. The detector also triggers a hardware-level emergency stop when necessary. Finally, the effectiveness and robustness of this framework are validated through extensive simulations and real-world experiments.
+              Non-prehensile transportation by robotic arms is a promising approach for the service industry. Such applications require robotic arms to be reactive, safe, and flexible enough to navigate dynamic and complex environments while maintaining the transported objects' stability. However, existing limited-horizon motion control methods are often ineffective in these scenarios. This letter presents a framework for efficient trajectory replanning, enabling robotic arms to transport objects with safety and flexibility. This framework first employs a sampling-based path planner with pose constraints to generate a kinematically feasible initial trajectory, parameterized by piecewise polynomials. Subsequently, a novel optimizer refines this trajectory to enhance safety while minimizing both energy consumption and execution time. The key innovation lies in decomposing the complex dynamics-based optimization into two simpler  kinematics-based subproblems, which significantly accelerates computation. Additionally, a collision detector continuously monitors the current trajectory, ready to initiate a replan, execute a safety stop, or trigger a hardware-level emergency stop in response to imminent threats. Finally, the effectiveness and robustness of this framework are validated through extensive experiments. 
             </p>
           </div>
         </div>
@@ -318,7 +318,7 @@
               <img src="static/images/Fig22.jpg" alt="Overview of the robustness test setup">
             </figure>
             <p>
-              Robustness test results. (a-c) Apparent contact‑force angle deviation vs. CoM displacement for low, medium, and high aggressiveness; (d) Experimental setup: applied CoM displacement directions (x, y); (e) Success rate vs. CoM displacement for low, medium, and high aggressiveness.
+              Robustness test results. (a-c) Contact‑force angle deviation vs. CoM displacement for low, medium, and high aggressiveness; (d) Experimental setup: applied CoM displacement directions (x, y); (e) Success rate vs. CoM displacement for low, medium, and high aggressiveness.
             </p>
           </div>
         </div>
@@ -431,7 +431,7 @@
             <figure class="image is-16by9">
               <iframe class="has-ratio" src="https://www.youtube.com/embed/VUcoDlgwZaQ" title="YouTube video player" frameborder="0" allowfullscreen></iframe>
             </figure>
-            <p class="has-text-centered has-text-weight-semibold mt-2">Non-prehensile transportation with frequently changing targets</p>
+            <p class="has-text-centered has-text-weight-semibold mt-2">Non-prehensile transportation with frequently changing goal points</p>
           </div>
         </div>
       </div>
@@ -502,7 +502,7 @@
           <h2 class="title is-3">Conclusion</h2>
           <div class="content has-text-justified">
             <p>
-              This letter introduces a holistic trajectory-replanning framework that enables safe, flexible, and efficient non-prehensile transportation. Extensive experiments demonstrate the effectiveness and robustness of the proposed method. Despite its effectiveness, our method has limitations. First, the model neglects angular acceleration, which can result in stability constraint violations during aggressive motion. This risk is exacerbated by parametric uncertainties, such as an unmodeled CoM position, which can cause the trajectories that the planner deems safe to fail in practice. Additionally, the current approach cannot handle moving obstacles for two reasons: (1) the front-end path planner searches in configuration space, and cannot incorporate the spatio-temporal motion information of moving obstacles; and (2) there is no unified representation for dynamic (time‑varying) maps. Furthermore, the robotic arm's full autonomy is limited by its reliance on the motion-capture system. Future work will focus on developing a parameter-robust planner and a fully autonomous system to address these issues.
+              This paper presents a holistic trajectory-replanning framework that enables safe, flexible, and efficient non-prehensile transportation. The effectiveness and robustness of the proposed framework are rigorously validated in both simulation and challenging real-world experiments. Despite its effectiveness, our method has limitations. First, the model neglects angular acceleration, which can result in stability constraint violations during aggressive motion. This risk is exacerbated by parametric uncertainties, such as an unmodeled CoM position, which can render trajectories deemed safe by the planner infeasible in practice. Additionally, the current approach faces challenges when dealing with moving obstacles, primarily for two reasons: (1) the front-end ignores the spatio‑temporal information of moving obstacles; and (2) there is no unified, time‑aware map for moving obstacles. Furthermore, the robotic arm's full autonomy is limited by its reliance on the motion-capture system. Future work will focus on developing a parameter-robust planner and a fully autonomous system to address these issues.
             </p>
           </div>
         </div>
