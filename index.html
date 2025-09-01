@@ -22,7 +22,7 @@
   <meta name="keywords" content="KEYWORDS SHOULD BE PLACED HERE">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>An Efficient Trajectory-Replanning Framework for Robotic Arm Non-Prehensile Transportation</title>
+  <title>Non-Prehensile Transportation</title>
   <link rel="icon" type="image/x-icon" href="static/images/flag.jpg">
   <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
   rel="stylesheet">
@@ -50,8 +50,8 @@
         <div class="columns is-centered">
           <div class="column has-text-centered">
             <h1 class="title is-1 publication-title">
-              <span>An Efficient Trajectory-Replanning Framework for</span><br>
-              <span>Robotic Arm Non-Prehensile Transportation</span>
+              <span>A Risk-Adaptive Motion Planning Framework for</span><br>
+              <span>Safe and Resilient Non-Prehensile Object Transportation</span>
             </h1>
             <!-- Paper authors -->
             <!-- <div class="is-size-5 publication-authors">
@@ -143,7 +143,7 @@
       <div class="hero-body">
         <img src="static/images/Fig00.jpg" alt="sss">
         <h2 class="subtitle has-text-justified">
-          Demonstration of our efficient trajectory-replanning framework. The robotic arm detects an unexpected obstacle during transport and quickly generates a new, safe trajectory (yellow) to the goal, replacing the colliding segment of the current trajectory (blue).
+          Demonstration of our risk-adaptive motion planning framework. The robotic arm detects an unexpected obstacle during transport and quickly generates a new, safe trajectory (yellow) to the goal, replacing the colliding segment of the current trajectory (blue).
         </h2>
       </div>
     </div>
@@ -157,7 +157,7 @@
           <h2 class="title is-3">Abstract</h2>
           <div class="content has-text-justified">
             <p>
-              Non-prehensile transportation by robotic arms is a promising approach for the service industry. Such applications require robotic arms to be reactive, safe, and flexible enough to navigate dynamic and complex environments while maintaining the transported objects' stability. However, existing limited-horizon motion control methods are often ineffective in these scenarios. This letter presents a framework for efficient trajectory replanning, enabling robotic arms to transport objects with safety and flexibility. This framework first employs a sampling-based path planner with pose constraints to generate a kinematically feasible initial trajectory, parameterized by piecewise polynomials. Subsequently, a novel optimizer refines this trajectory to enhance safety while minimizing both energy consumption and execution time. The key innovation lies in decomposing the complex dynamics-based optimization into two simpler  kinematics-based subproblems, which significantly accelerates computation. Additionally, a collision detector continuously monitors the current trajectory, ready to initiate a replan, execute a safety stop, or trigger a hardware-level emergency stop in response to imminent threats. Finally, the effectiveness and robustness of this framework are validated through extensive experiments. 
+              Non-prehensile transportation by robotic arms is a promising approach for the service industry. Such applications require robotic arms to be reactive, safe, and flexible enough to navigate dynamic and complex environments while maintaining the transported objects' stability. However, existing limited-horizon motion control methods are often ineffective in these scenarios. This letter presents a risk-adaptive motion planning framework for safe and resilient non-prehensile object transportation. This adaptability is achieved through a three-level safety mechanism that responds to time-to-collision (TTC) risk estimates with replanning, a controlled safety stop, or a hardware-level emergency stop. The former two maneuvers are powered by an efficient trajectory generator, which integrates constrained path planning, trajectory parameterization, and trajectory refinement. The key to its efficiency lies in decomposing the complex dynamics-based trajectory refinement problem into two simpler kinematics-based subproblems, which significantly accelerates computation. Furthermore, the framework incorporates a periodic replanning mechanism to proactively adapt to task-level changes. Finally, the effectiveness and resilience of this framework are validated through extensive experiments.
             </p>
           </div>
         </div>
@@ -176,7 +176,7 @@
               style="border-radius: 10px; box-shadow: 0 4px 8px rgba(0,0,0,0.1);">
           <div class="content has-text-justified">
             <p>
-              Diagram of the proposed replanning framework, including path planning, trajectory parameterization, and two-stage trajectory refinement.
+              Architecture of the risk-adaptive motion planning framework, featuring a dual-triggering mechanism (periodic and safety-driven) and a complete trajectory generation pipeline.
             </p>
           </div>
         </div>
@@ -188,7 +188,7 @@
   <section class="section">
     <div class="container is-max-desktop">
       <p class="has-text-centered is-size-6">
-        Note: All videos below are shown at their original speed (real-time) without any speed adjustments.
+        Note: All videos below are shown at their original speed (× 1) without any speed adjustments.
       </p>
       
       <!------------------------------------- 对比实验 ------------------------------------->
@@ -502,7 +502,7 @@
           <h2 class="title is-3">Conclusion</h2>
           <div class="content has-text-justified">
             <p>
-              This paper presents a holistic trajectory-replanning framework that enables safe, flexible, and efficient non-prehensile transportation. The effectiveness and robustness of the proposed framework are rigorously validated in both simulation and challenging real-world experiments. Despite its effectiveness, our method has limitations. First, the model neglects angular acceleration, which can result in stability constraint violations during aggressive motion. This risk is exacerbated by parametric uncertainties, such as an unmodeled CoM position, which can render trajectories deemed safe by the planner infeasible in practice. Additionally, the current approach faces challenges when dealing with moving obstacles, primarily for two reasons: (1) the front-end ignores the spatio‑temporal information of moving obstacles; and (2) there is no unified, time‑aware map for moving obstacles. Furthermore, the robotic arm's full autonomy is limited by its reliance on the motion-capture system. Future work will focus on developing a parameter-robust planner and a fully autonomous system to address these issues.
+              This paper presents a risk-adaptive motion planning framework that enables safe, efficient, and resilient non-prehensile object transportation. The effectiveness and resilience of this framework are rigorously validated in both simulations and real-world experiments. Despite its effectiveness, our method has limitations. First, the model neglects angular acceleration, which can result in stability constraint violations during aggressive motion. This risk is exacerbated by parametric uncertainties, such as an unmodeled CoM position, which can render trajectories deemed safe by the planner infeasible in practice. Additionally, the current approach faces challenges when dealing with moving obstacles, primarily for two reasons: (1) the front-end ignores the spatio‑temporal information of moving obstacles, and (2) there is no unified, time‑aware map for moving obstacles. Furthermore, the robotic arm's full autonomy is limited by its reliance on the motion-capture system. Future work will focus on developing a parameter-robust planner and a fully autonomous system to address these issues.
             </p>
           </div>
         </div>
