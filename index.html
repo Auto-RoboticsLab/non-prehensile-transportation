@@ -157,7 +157,7 @@
           <h2 class="title is-3">Abstract</h2>
           <div class="content has-text-justified">
             <p>
-              Non-prehensile transportation by robotic arms is a promising approach for the service industry. Such applications require robotic arms to be reactive, safe, and flexible enough to navigate dynamic and complex environments while maintaining the transported objects' stability. However, existing limited-horizon motion control methods are often ineffective in these scenarios. This letter presents a risk-adaptive motion planning framework for safe and resilient non-prehensile object transportation. This adaptability is achieved through a three-level safety mechanism that responds to time-to-collision (TTC) risk estimates with replanning, a controlled safety stop, or a hardware-level emergency stop. The former two maneuvers are powered by an efficient trajectory generator, which integrates constrained path planning, trajectory parameterization, and trajectory refinement. The key to its efficiency lies in decomposing the complex dynamics-based trajectory refinement problem into two simpler kinematics-based subproblems, which significantly accelerates computation. Furthermore, the framework incorporates a periodic replanning mechanism to proactively adapt to task-level changes. Finally, the effectiveness and resilience of this framework are validated through extensive experiments.
+              Non-prehensile transportation by robotic arms is a promising approach for the service industry. Such applications require robotic arms to be reactive, safe, and flexible enough to navigate dynamic and complex environments while maintaining the transported objects' stability. However, existing limited-horizon motion control methods are often ineffective in these scenarios. This letter presents a risk-adaptive motion planning framework for safe and resilient non-prehensile object transportation. This adaptability is achieved through a three-level safety mechanism that responds to time-to-collision risk estimates with replanning, a planned graceful safety stop, or a hardware-level emergency stop. The former two maneuvers are powered by an efficient trajectory generator, integrating constrained path planning, trajectory parameterization, and refinement. The key to its efficiency lies in decomposing the complex dynamics-based trajectory refinement problem into two simpler kinematics-based subproblems, which significantly accelerates computation. In addition to the safety mechanism, the framework incorporates a periodic replanning mechanism to proactively adapt to dynamic goal switching. Finally, the effectiveness and resilience of this framework are validated through extensive experiments.
             </p>
           </div>
         </div>
@@ -285,13 +285,13 @@
             <figure class="image is-16by9">
               <iframe class="has-ratio" src="https://www.youtube.com/embed/BWIKJ9bltkM" title="YouTube video player" frameborder="0" allowfullscreen></iframe>
             </figure>
-            <p class="has-text-centered has-text-weight-semibold mt-2">The replanning strategy in response to a sudden obstacle</p>
+            <p class="has-text-centered has-text-weight-semibold mt-2">The replanning maneuver in response to a sudden obstacle</p>
           </div>
           <div class="column">
             <figure class="image is-16by9">
               <iframe class="has-ratio" src="https://www.youtube.com/embed/kaFB2c12sQ8" title="YouTube video player" frameborder="0" allowfullscreen></iframe>
             </figure>
-            <p class="has-text-centered has-text-weight-semibold mt-2">The safety-stop strategy in response to a sudden obstacle</p>
+            <p class="has-text-centered has-text-weight-semibold mt-2">The safety-stop maneuver in response to a sudden obstacle</p>
           </div>
         </div>
 
@@ -394,7 +394,7 @@
 
         <!-- Optional Description -->
         <p class="content has-text-centered mb-5">
-          Finally, real-world experiments validate the proposed method. Notably, the stable-contact constraints derived from the simulated cuboid (5 × 5 × 20 cm) are applied directly to all real-world trials without modification. Therefore, the following experiment can also be considered a test of robustness to parametric uncertainty.
+          Finally, real-world experiments validate the proposed method. Notably, the nominal stable-contact constraints derived from the simulated cuboid (5 × 5 × 20 cm) are applied directly to all real-world trials without modification. Therefore, the following experiment can also be considered a test of robustness to parametric uncertainty.
         </p>
 
         <!-- Row 1: Two videos side-by-side -->
@@ -502,7 +502,9 @@
           <h2 class="title is-3">Conclusion</h2>
           <div class="content has-text-justified">
             <p>
-              This paper presents a risk-adaptive motion planning framework that enables safe, efficient, and resilient non-prehensile object transportation. The effectiveness and resilience of this framework are rigorously validated in both simulations and real-world experiments. Despite its effectiveness, our method has limitations. First, the model neglects angular acceleration, which can result in stability constraint violations during aggressive motion. This risk is exacerbated by parametric uncertainties, such as an unmodeled CoM position, which can render trajectories deemed safe by the planner infeasible in practice. Additionally, the current approach faces challenges when dealing with moving obstacles, primarily for two reasons: (1) the front-end ignores the spatio‑temporal information of moving obstacles, and (2) there is no unified, time‑aware map for moving obstacles. Furthermore, the robotic arm's full autonomy is limited by its reliance on the motion-capture system. Future work will focus on developing a parameter-robust planner and a fully autonomous system to address these issues.
+              This paper presents a risk-adaptive motion planning framework that enables safe, efficient, and resilient non-prehensile object transportation. The core contribution of this framework is its dual mechanism: a three-level safety mechanism to handle imminent threats, and a periodic replanning mechanism to proactively adapt to dynamic goal switching. Both mechanisms are powered by an efficient trajectory generator that integrates constrained path planning, trajectory parameterization, and two-stage trajectory refinement. The effectiveness and resilience of this framework are rigorously validated in both simulations and real-world experiments.
+
+              Despite its effectiveness, our method has limitations. First, the contact model neglects angular acceleration, which can result in slipping or tipping during aggressive motion. This risk is exacerbated by parametric uncertainties, such as an unmodeled CoM position, which can render trajectories deemed safe by the planner infeasible in practice. Additionally, the current approach is not yet capable of handling continuously moving obstacles, for two primary reasons: (1) The front-end path planner cannot yet leverage their spatio-temporal information; (2) There is no unified, time‑aware map available for them. Furthermore, the robotic arm's full autonomy is limited by its reliance on the motion-capture system. Future work will focus on developing a parameter-robust planner and a fully autonomous system to address these issues.
             </p>
           </div>
         </div>
